@@ -1,0 +1,282 @@
+.adobestock6152461491Icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1776px;
+  height: 996px;
+  object-fit: cover;
+}
+.fioGameuxUsersSignInChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-gray-300);
+  width: 1440px;
+  height: 968px;
+}
+.hyperion,
+.signInTo,
+.welcome {
+  position: absolute;
+  top: 26.33%;
+  left: 5.25%;
+  font-size: var(--font-size-19xl);
+}
+.hyperion,
+.signInTo {
+  top: 36%;
+  font-size: var(--font-size-lg);
+  letter-spacing: 0.01em;
+  font-weight: 500;
+  color: var(--color-dimgray);
+}
+.hyperion {
+  top: 10%;
+  left: 5%;
+  font-size: var(--font-size-29xl);
+  font-weight: 300;
+  font-family: var(--font-lunatix-ot);
+  color: var(--color-khaki);
+}
+.frameChild {
+  position: absolute;
+  top: 0;
+  left: 400px;
+  width: 400px;
+  height: 600px;
+  object-fit: cover;
+}
+.signIn {
+  position: relative;
+  letter-spacing: 0.01em;
+}
+.signInWrapper {
+  position: absolute;
+  width: 40%;
+  top: calc(50% + 92px);
+  right: 55%;
+  left: 5%;
+  border-radius: var(--br-5xs);
+  background: linear-gradient(90deg, #feffcf, #fdff8b);
+  height: 44px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-smi) var(--padding-106xl);
+  box-sizing: border-box;
+  color: var(--color-gray-200);
+}
+.enterUsername,
+.hyperion1 {
+  position: relative;
+  letter-spacing: 0.01em;
+}
+.enterUsername {
+  font-weight: 300;
+}
+.hyperion1 {
+  color: var(--color-gray-100);
+}
+.enterUsernameParent {
+  position: absolute;
+  width: 40%;
+  top: calc(50% + 28px);
+  right: 55%;
+  left: 5%;
+  border-radius: var(--br-5xs);
+  background-color: var(--color-darkslategray);
+  height: 44px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 var(--padding-xl);
+  box-sizing: border-box;
+  gap: 100px;
+  font-size: var(--font-size-xs);
+  color: var(--color-paleturquoise);
+}
+.dontHaveAn {
+  position: absolute;
+  top: 5.56%;
+  left: 0;
+  line-height: 16px;
+  font-weight: 300;
+}
+.signUpNow {
+  position: relative;
+  line-height: 16px;
+  font-weight: 600;
+}
+.openInBrowser {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.signUpNowParent {
+  position: absolute;
+  top: 0;
+  left: 165px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-7xs);
+  color: var(--color-paleturquoise);
+}
+.dontHaveAnAccountParent {
+  position: absolute;
+  height: 3%;
+  width: 34.5%;
+  top: 81%;
+  right: 60.5%;
+  bottom: 16%;
+  left: 5%;
+  color: var(--color-gainsboro);
+}
+.cancelIcon {
+  position: absolute;
+  top: 30px;
+  left: 740px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+}
+.checkedIcon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.titleCopy3 {
+  position: relative;
+  letter-spacing: 0.04px;
+  line-height: 17px;
+}
+.group,
+.welcomeParent {
+  position: absolute;
+  overflow: hidden;
+}
+.group {
+  top: 263px;
+  left: 40px;
+  border-radius: var(--br-5xs);
+  background-color: #03b15e;
+  width: 320px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-3xs) 30px var(--padding-3xs) var(--padding-3xs);
+  box-sizing: border-box;
+  gap: 10px;
+  font-size: var(--font-size-2xs);
+  font-family: var(--font-proxima-nova);
+}
+.welcomeParent {
+  top: 152px;
+  left: 320px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-gray-200);
+  box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.15);
+  width: 800px;
+  height: 600px;
+  font-size: var(--font-size-sm);
+}
+.copyrightFioLabsParent {
+  position: absolute;
+  top: 912px;
+  left: 105px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+  color: var(--color-paleturquoise);
+}
+.poweredBy {
+  top: 804px;
+  left: 686px;
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+.fioAppIcon,
+.poweredBy,
+.x {
+  position: absolute;
+}
+.x {
+  top: 856px;
+  left: 711px;
+  font-size: var(--font-size-5xl);
+}
+.fioAppIcon {
+  top: 816px;
+  left: 592px;
+  border-radius: 6.67px;
+  width: 106px;
+  height: 106px;
+  overflow: hidden;
+}
+.icon {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+.fioAppIcon1,
+.icon1 {
+  position: absolute;
+  overflow: hidden;
+}
+.fioAppIcon1 {
+  top: 844px;
+  left: 770px;
+  border-radius: 6.67px;
+  background-color: var(--color-white);
+  box-shadow: 0 0 20px 8px rgba(0, 0, 0, 0.15);
+  width: 50px;
+  height: 50px;
+}
+.icon1 {
+  height: 67.97%;
+  width: 75.35%;
+  top: 0;
+  right: 13.95%;
+  bottom: 32.03%;
+  left: 10.7%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.fiolabs,
+.parent {
+  position: absolute;
+  top: 84.31%;
+  left: 0;
+}
+.parent {
+  height: 7.9%;
+  width: 2.99%;
+  top: 87.81%;
+  right: 94.24%;
+  bottom: 4.29%;
+  left: 2.78%;
+}
+.fioGameuxUsersSignIn {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 968px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-3xs);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
