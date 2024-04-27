@@ -196,7 +196,6 @@ theme_override_constants/margin_bottom = 20
 
 [node name="WelcomeVBox" type="VBoxContainer" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
@@ -323,6 +322,7 @@ fit_content = true
 
 [node name="ThirdVBox" type="VBoxContainer" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
