@@ -1,10 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://btmrsn1qilhrd"]
+[gd_scene load_steps=19 format=3 uid="uid://btmrsn1qilhrd"]
 
 [ext_resource type="Texture2D" uid="uid://i2ru2midvrw5" path="res://Art/hyperionbackground.png" id="1_aeclc"]
 [ext_resource type="Script" path="res://scenes/MainScene/MainScene.gd" id="1_uyah5"]
 [ext_resource type="Texture2D" uid="uid://qmlbbcc3pgdb" path="res://Art/cooldog.png" id="2_qtxje"]
 [ext_resource type="Texture2D" uid="uid://gdfwyucf3nty" path="res://Art/hyperion.svg" id="3_jtpa0"]
 [ext_resource type="Texture2D" uid="uid://dqha3p2717kyf" path="res://Art/notice.svg" id="4_2jt4m"]
+[ext_resource type="Script" path="res://scenes/MainScene/enforce_lowercase_lineedit.gd" id="5_7ydjr"]
+[ext_resource type="PackedScene" uid="uid://biuvwwvodtdst" path="res://scenes/LoadingIcon/loading_icon.tscn" id="5_dgl40"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4q7g"]
 bg_color = Color(0, 0, 0, 0.72549)
@@ -89,6 +91,8 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqmb7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypuap"]
 bg_color = Color(0, 0, 0, 1)
@@ -224,6 +228,7 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_3h411")
 theme_override_styles/focus = SubResource("StyleBoxFlat_hu8k6")
 placeholder_text = "Enter Email Address"
+virtual_keyboard_type = 5
 
 [node name="SignUpButton" type="Button" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/WelcomeVBox"]
 layout_mode = 2
@@ -287,15 +292,8 @@ theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxFlat_3h411")
 theme_override_styles/focus = SubResource("StyleBoxFlat_hu8k6")
 placeholder_text = "Enter Handle"
-
-[node name="DomainLineEdit" type="LineEdit" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/SecondVBox"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 35)
-layout_mode = 2
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("StyleBoxFlat_3h411")
-theme_override_styles/focus = SubResource("StyleBoxFlat_hu8k6")
-placeholder_text = "Enter Domain (Optional)"
+virtual_keyboard_type = 5
+script = ExtResource("5_7ydjr")
 
 [node name="SecondVboxContinue" type="Button" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/SecondVBox"]
 layout_mode = 2
@@ -327,9 +325,10 @@ layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="RegisterText1" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
+[node name="CreateWalletText" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
 unique_name_in_owner = true
 texture_filter = 4
+clip_contents = false
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0.941176, 1, 1)
 theme_override_font_sizes/normal_font_size = 20
@@ -337,61 +336,172 @@ bbcode_enabled = true
 text = "[center]Creating wallets for [handle]"
 fit_content = true
 
-[node name="RegisterText2" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
-texture_filter = 4
+[node name="Control" type="Control" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
+custom_minimum_size = Vector2(0, 38)
 layout_mode = 2
+
+[node name="CreateWalletText2" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control"]
+unique_name_in_owner = true
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_default_cursor_shape = 1
 theme_override_colors/default_color = Color(0, 0.941176, 1, 1)
 theme_override_font_sizes/normal_font_size = 13
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hqmb7")
 bbcode_enabled = true
 text = "[img width=16]res://Art/ethereum-logo.jpg[/img] evm:
-[center]0x10e0271ec47d55511a047516f2a7301801d55eab"
+[center]"
 fit_content = true
 autowrap_mode = 0
+context_menu_enabled = true
+selection_enabled = true
 
-[node name="RegisterText3" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
-texture_filter = 4
+[node name="LoadingIcon" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control/CreateWalletText2" instance=ExtResource("5_dgl40")]
+layout_mode = 1
+offset_left = 53.0
+offset_top = 2.0
+offset_right = 69.0
+offset_bottom = 18.0
+
+[node name="Control2" type="Control" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
+custom_minimum_size = Vector2(0, 38)
 layout_mode = 2
+
+[node name="CreateWalletText3" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control2"]
+unique_name_in_owner = true
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_default_cursor_shape = 1
 theme_override_colors/default_color = Color(0, 0.941176, 1, 1)
 theme_override_font_sizes/normal_font_size = 13
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hqmb7")
 bbcode_enabled = true
 text = "[img width=16]res://Art/solana-logo.png[/img] solana:
-[center]hn7cabqlq46es1jh92dqqisaq662smxelllshhe4ywrh"
+[center]"
 fit_content = true
 autowrap_mode = 0
+context_menu_enabled = true
+selection_enabled = true
 
-[node name="RegisterText4" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
-texture_filter = 4
+[node name="LoadingIcon" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control2/CreateWalletText3" instance=ExtResource("5_dgl40")]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 2.0
+offset_right = 83.0
+offset_bottom = 18.0
+
+[node name="Control3" type="Control" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
+custom_minimum_size = Vector2(0, 38)
 layout_mode = 2
+
+[node name="CreateWalletText4" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control3"]
+unique_name_in_owner = true
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_default_cursor_shape = 1
 theme_override_colors/default_color = Color(0, 0.941176, 1, 1)
 theme_override_font_sizes/normal_font_size = 13
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hqmb7")
 bbcode_enabled = true
 text = "[img width=16]res://Art/polygon.png[/img] polygon:
-[center]0xf2a1246e60a57c899dcd6e5166e246bc5cd7e783"
+[center]"
 fit_content = true
 autowrap_mode = 0
+context_menu_enabled = true
+selection_enabled = true
 
-[node name="RegisterText5" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
+[node name="LoadingIcon" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control3/CreateWalletText4" instance=ExtResource("5_dgl40")]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 2.0
+offset_right = 91.0
+offset_bottom = 18.0
+
+[node name="Control4" type="Control" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
+custom_minimum_size = Vector2(0, 38)
 layout_mode = 2
+
+[node name="CreateWalletText5" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control4"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_default_cursor_shape = 1
 theme_override_colors/default_color = Color(0, 0.941176, 1, 1)
 theme_override_font_sizes/normal_font_size = 13
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hqmb7")
 bbcode_enabled = true
 text = "[img width=16]res://Art/wax-chain.png[/img] wax:
-[center]eos5tda12sdlfjhkdfde1uqbwd6b6wt46bc5cd7e783"
+[center]"
 fit_content = true
 autowrap_mode = 0
+context_menu_enabled = true
+selection_enabled = true
 
-[node name="RegisterText" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
-texture_filter = 4
+[node name="LoadingIcon" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control4/CreateWalletText5" instance=ExtResource("5_dgl40")]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 2.0
+offset_right = 65.0
+offset_bottom = 18.0
+
+[node name="Control5" type="Control" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
+custom_minimum_size = Vector2(0, 38)
 layout_mode = 2
+
+[node name="CreateWalletText6" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control5"]
+unique_name_in_owner = true
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_default_cursor_shape = 1
 theme_override_colors/default_color = Color(0, 0.941176, 1, 1)
 theme_override_font_sizes/normal_font_size = 13
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hqmb7")
 bbcode_enabled = true
 text = "[img width=16]res://Art/fio-logo.png[/img] fio:
-[center]fio8ktpwmh8m4cfrmfu9lapzpih5sq5jkwxzwxfnb"
+[center]"
 fit_content = true
 autowrap_mode = 0
+context_menu_enabled = true
+selection_enabled = true
+
+[node name="LoadingIcon" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control5/CreateWalletText6" instance=ExtResource("5_dgl40")]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 2.0
+offset_right = 57.0
+offset_bottom = 18.0
 
 [node name="ThirdVBoxContinue" type="Button" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -450,6 +560,6 @@ size_flags_stretch_ratio = 0.25
 [connection signal="text_submitted" from="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/WelcomeVBox/EmailSignupLineEdit" to="." method="_on_email_signup_line_edit_text_submitted"]
 [connection signal="pressed" from="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/WelcomeVBox/SignUpButton" to="." method="_on_sign_up_button_pressed"]
 [connection signal="text_changed" from="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/SecondVBox/HandleLineEdit" to="." method="_on_handle_line_edit_text_changed"]
-[connection signal="text_changed" from="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/SecondVBox/DomainLineEdit" to="." method="_on_domain_line_edit_text_changed"]
+[connection signal="text_changed" from="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/SecondVBox/HandleLineEdit" to="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/SecondVBox/HandleLineEdit" method="_on_text_changed"]
 [connection signal="pressed" from="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/SecondVBox/SecondVboxContinue" to="." method="_on_second_vbox_continue_pressed"]
 [connection signal="pressed" from="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/ThirdVBoxContinue" to="." method="_on_third_v_box_continue_pressed"]
