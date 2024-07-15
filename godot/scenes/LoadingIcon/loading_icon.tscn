@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://biuvwwvodtdst"]
+
+[ext_resource type="Texture2D" uid="uid://c86pk6mo4kp8s" path="res://Art/loading.webp" id="1_6u3lt"]
+[ext_resource type="Script" path="res://scenes/LoadingIcon/LoadingIcon.gd" id="2_3x6sc"]
+
+[node name="LoadingIcon" type="TextureRect"]
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
+pivot_offset = Vector2(8, 8)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_6u3lt")
+expand_mode = 2
+script = ExtResource("2_3x6sc")

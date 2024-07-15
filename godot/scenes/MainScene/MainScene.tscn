@@ -1,0 +1,565 @@
+[gd_scene load_steps=19 format=3 uid="uid://btmrsn1qilhrd"]
+
+[ext_resource type="Texture2D" uid="uid://i2ru2midvrw5" path="res://Art/hyperionbackground.png" id="1_aeclc"]
+[ext_resource type="Script" path="res://scenes/MainScene/MainScene.gd" id="1_uyah5"]
+[ext_resource type="Texture2D" uid="uid://qmlbbcc3pgdb" path="res://Art/cooldog.png" id="2_qtxje"]
+[ext_resource type="Texture2D" uid="uid://gdfwyucf3nty" path="res://Art/hyperion.svg" id="3_jtpa0"]
+[ext_resource type="Texture2D" uid="uid://dqha3p2717kyf" path="res://Art/notice.svg" id="4_2jt4m"]
+[ext_resource type="Script" path="res://scenes/MainScene/enforce_lowercase_lineedit.gd" id="5_7ydjr"]
+[ext_resource type="PackedScene" uid="uid://biuvwwvodtdst" path="res://scenes/LoadingIcon/loading_icon.tscn" id="5_dgl40"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4q7g"]
+bg_color = Color(0, 0, 0, 0.72549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwvko"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(1, 1, 1, 0.6)
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3h411"]
+content_margin_left = 10.0
+bg_color = Color(0.203922, 0.203922, 0.203922, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu8k6"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.0235294, 0.941176, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21apn"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.0235294, 0.941176, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxbxc"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.509051, 0.960786, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jer17"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0.769722, 0.818589, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pmj3"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0.7, 0.75, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvwwe"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.0235294, 0.941176, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqmb7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypuap"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+
+[node name="MainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uyah5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_aeclc")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Padding" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="BackgroundPanel" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_f4q7g")
+
+[node name="MainMarginContainer" type="MarginContainer" parent="HBoxContainer/BackgroundPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 100
+
+[node name="MainPanel" type="Panel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mwvko")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="LeftSide" type="Control" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide"]
+custom_minimum_size = Vector2(162, 39)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.0
+offset_top = 20.0
+offset_right = 81.0
+offset_bottom = 59.0
+grow_horizontal = 2
+texture = ExtResource("3_jtpa0")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="WelcomeVBox" type="VBoxContainer" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="WelcomeText" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/WelcomeVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "Welcome!"
+fit_content = true
+
+[node name="AccountCreationText" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/WelcomeVBox"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.439216, 0.447059, 0.454902, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "New player account creation"
+fit_content = true
+
+[node name="EmailSignupLineEdit" type="LineEdit" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/WelcomeVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_3h411")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hu8k6")
+placeholder_text = "Enter Email Address"
+virtual_keyboard_type = 5
+
+[node name="SignUpButton" type="Button" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/WelcomeVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_21apn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kxbxc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jer17")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_4pmj3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvwwe")
+text = "Submit"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/WelcomeVBox"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/WelcomeVBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_2jt4m")
+stretch_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/WelcomeVBox/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "By continuing, you are acknowledging and accepting our [color=\"0fbbe0\"]Terms of Use[/color] and [color=\"0fbbe0\"]Privacy Policy[/color]."
+fit_content = true
+
+[node name="SecondVBox" type="VBoxContainer" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="RegisterText" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/SecondVBox"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Register"
+fit_content = true
+
+[node name="HandleCreationText" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/SecondVBox"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.439216, 0.447059, 0.454902, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "Create your handle"
+fit_content = true
+
+[node name="HandleLineEdit" type="LineEdit" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/SecondVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_3h411")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hu8k6")
+placeholder_text = "Enter Handle"
+virtual_keyboard_type = 5
+script = ExtResource("5_7ydjr")
+
+[node name="SecondVboxContinue" type="Button" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/SecondVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_21apn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kxbxc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jer17")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_4pmj3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvwwe")
+text = "Continue"
+
+[node name="FinalHandleText" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/SecondVBox"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Your final handle is...
+Test@test.test"
+fit_content = true
+
+[node name="ThirdVBox" type="VBoxContainer" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="CreateWalletText" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
+unique_name_in_owner = true
+texture_filter = 4
+clip_contents = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0.941176, 1, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]Creating wallets for [handle]"
+fit_content = true
+
+[node name="Control" type="Control" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+
+[node name="CreateWalletText2" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control"]
+unique_name_in_owner = true
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/default_color = Color(0, 0.941176, 1, 1)
+theme_override_font_sizes/normal_font_size = 13
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hqmb7")
+bbcode_enabled = true
+text = "[img width=16]res://Art/ethereum-logo.jpg[/img] evm:
+[center]"
+fit_content = true
+autowrap_mode = 0
+context_menu_enabled = true
+selection_enabled = true
+
+[node name="LoadingIcon" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control/CreateWalletText2" instance=ExtResource("5_dgl40")]
+layout_mode = 1
+offset_left = 53.0
+offset_top = 2.0
+offset_right = 69.0
+offset_bottom = 18.0
+
+[node name="Control2" type="Control" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+
+[node name="CreateWalletText3" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control2"]
+unique_name_in_owner = true
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/default_color = Color(0, 0.941176, 1, 1)
+theme_override_font_sizes/normal_font_size = 13
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hqmb7")
+bbcode_enabled = true
+text = "[img width=16]res://Art/solana-logo.png[/img] solana:
+[center]"
+fit_content = true
+autowrap_mode = 0
+context_menu_enabled = true
+selection_enabled = true
+
+[node name="LoadingIcon" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control2/CreateWalletText3" instance=ExtResource("5_dgl40")]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 2.0
+offset_right = 83.0
+offset_bottom = 18.0
+
+[node name="Control3" type="Control" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+
+[node name="CreateWalletText4" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control3"]
+unique_name_in_owner = true
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/default_color = Color(0, 0.941176, 1, 1)
+theme_override_font_sizes/normal_font_size = 13
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hqmb7")
+bbcode_enabled = true
+text = "[img width=16]res://Art/polygon.png[/img] polygon:
+[center]"
+fit_content = true
+autowrap_mode = 0
+context_menu_enabled = true
+selection_enabled = true
+
+[node name="LoadingIcon" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control3/CreateWalletText4" instance=ExtResource("5_dgl40")]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 2.0
+offset_right = 91.0
+offset_bottom = 18.0
+
+[node name="Control4" type="Control" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+
+[node name="CreateWalletText5" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control4"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/default_color = Color(0, 0.941176, 1, 1)
+theme_override_font_sizes/normal_font_size = 13
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hqmb7")
+bbcode_enabled = true
+text = "[img width=16]res://Art/wax-chain.png[/img] wax:
+[center]"
+fit_content = true
+autowrap_mode = 0
+context_menu_enabled = true
+selection_enabled = true
+
+[node name="LoadingIcon" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control4/CreateWalletText5" instance=ExtResource("5_dgl40")]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 2.0
+offset_right = 65.0
+offset_bottom = 18.0
+
+[node name="Control5" type="Control" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
+custom_minimum_size = Vector2(0, 38)
+layout_mode = 2
+
+[node name="CreateWalletText6" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control5"]
+unique_name_in_owner = true
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_default_cursor_shape = 1
+theme_override_colors/default_color = Color(0, 0.941176, 1, 1)
+theme_override_font_sizes/normal_font_size = 13
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hqmb7")
+bbcode_enabled = true
+text = "[img width=16]res://Art/fio-logo.png[/img] fio:
+[center]"
+fit_content = true
+autowrap_mode = 0
+context_menu_enabled = true
+selection_enabled = true
+
+[node name="LoadingIcon" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/Control5/CreateWalletText6" instance=ExtResource("5_dgl40")]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 2.0
+offset_right = 57.0
+offset_bottom = 18.0
+
+[node name="ThirdVBoxContinue" type="Button" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_21apn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kxbxc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jer17")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_4pmj3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvwwe")
+text = "Continue"
+
+[node name="SignInText" type="RichTextLabel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.5
+offset_top = -43.0
+offset_right = -12.5
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[center]Already have an account? [color=\"0fbbe0\"]Sign in here"
+fit_content = true
+
+[node name="RightSide" type="Panel" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer"]
+clip_children = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.9
+theme_override_styles/panel = SubResource("StyleBoxFlat_ypuap")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/RightSide"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_qtxje")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="Padding2" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+
+[connection signal="text_submitted" from="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/WelcomeVBox/EmailSignupLineEdit" to="." method="_on_email_signup_line_edit_text_submitted"]
+[connection signal="pressed" from="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/WelcomeVBox/SignUpButton" to="." method="_on_sign_up_button_pressed"]
+[connection signal="text_changed" from="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/SecondVBox/HandleLineEdit" to="." method="_on_handle_line_edit_text_changed"]
+[connection signal="text_changed" from="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/SecondVBox/HandleLineEdit" to="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/SecondVBox/HandleLineEdit" method="_on_text_changed"]
+[connection signal="pressed" from="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/SecondVBox/SecondVboxContinue" to="." method="_on_second_vbox_continue_pressed"]
+[connection signal="pressed" from="HBoxContainer/BackgroundPanel/MainMarginContainer/MainPanel/HBoxContainer/LeftSide/MarginContainer/ThirdVBox/ThirdVBoxContinue" to="." method="_on_third_v_box_continue_pressed"]
