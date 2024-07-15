@@ -31,7 +31,7 @@ const Domain = ({ setCurrentScreen }) => {
     </div>
     <div className={styles.mainContentBlock}>
       <div className={styles.enterDomain}>
-        Register Handle and Domain
+        Register Handle
       </div>
       <img className={styles.hyperionIcon} alt="" src={hyperionImg}/>
       <img className={styles.mainContentImage} alt="" src={mainImage} />
@@ -40,17 +40,8 @@ const Domain = ({ setCurrentScreen }) => {
           type="text"
           className={styles.input2}
           value={handleName}
-          placeholder="Enter Handle Name"
+          placeholder="Enter Handle"
           onChange={(e) => setHandleName(e.target.value)}
-        />
-      </div>
-      <div>
-        <input
-          type="text"
-          className={styles.input}
-          value={domain}
-          placeholder="Enter Custom Domain Name (Default: hyperion)"
-          onChange={(e) => setDomain(e.target.value)}
         />
       </div>
       <div className={styles.cta}>
